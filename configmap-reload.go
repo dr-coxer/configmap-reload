@@ -106,6 +106,7 @@ func main() {
 				for _, h := range webhook {
 					begun := time.Now()
 					req, err := http.NewRequest(*webhookMethod, h.String(), nil)
+					req.Header.Add(*webhookHeaderKey, *webhookHeaderValue)
 					if err != nil {
 						setFailureMetrics(h.String(), "client_request_create")
 						log.Println("error:", err)
