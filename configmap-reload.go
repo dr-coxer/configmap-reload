@@ -22,6 +22,8 @@ var (
 	volumeDirs        volumeDirsFlag
 	webhook           webhookFlag
 	webhookMethod     = flag.String("webhook-method", "POST", "the HTTP method url to use to send the webhook")
+	webhookHeaderKey     = flag.String("webhook-header-key", "null", "the HTTP header to use to send the webhook (GET method only)")
+	webhookHeaderValue     = flag.String("webhook-header-value", "null", "the HTTP header to use to send the webhook (GET method only)")
 	webhookStatusCode = flag.Int("webhook-status-code", 200, "the HTTP status code indicating successful triggering of reload")
 	webhookRetries    = flag.Int("webhook-retries", 1, "the amount of times to retry the webhook reload request")
 	listenAddress     = flag.String("web.listen-address", ":9533", "Address to listen on for web interface and telemetry.")
